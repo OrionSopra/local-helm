@@ -38,7 +38,7 @@ jobs:
           make build-cross
           ls -ltr
           make dist checksum VERSION="${{ github.ref_name }}"
-          ls -ltr
+          ls -ltr _dist
           
       - name: Create a directory for the artifacts
         run: mkdir -p artifacts
