@@ -33,18 +33,16 @@ jobs:
       - name: Build Helm Binaries
         run: |
           set -eu -o pipefail
-          ls -ltr
-
-          make build-cross
-          ls -ltr
-          make dist checksum VERSION="${{ github.ref_name }}"
-          ls -ltr _dist
           
+          make build-cross
+          
+          make dist checksum VERSION="${{ github.ref_name }}"
+                    
       - name: Create a directory for the artifacts
         run: mkdir -p artifacts
 
       - name: Move the built binary to the artifacts directory
-        run: mv _dist ./artifacts/
+        run: mv _dist/linux-arm64/helm ./artifacts/
 
       - name: Upload the Helm binary artifact
         uses: actions/upload-artifact@v2
