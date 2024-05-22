@@ -41,7 +41,7 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
-          files: _dist/linux-arm64/helm              
+          files: _dist/linux-arm64/helm, _dist/linux-amd64/helm, _dist/linux-arm/helm, _dist/linux-s390x/helm, _dist/linux-riscv64/helm, _dist/linux-ppc64le/helm, _dist/linux-386/helm 
       
       - name: Create a directory for the artifacts
         run: mkdir -p artifacts
