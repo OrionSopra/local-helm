@@ -49,6 +49,7 @@ jobs:
         with:
           name: helm-binary
           path: ./artifacts
+          retention-days: 7
           
       - name: Set latest version
         run: |
