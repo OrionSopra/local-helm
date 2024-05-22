@@ -47,7 +47,7 @@ jobs:
         run: mkdir -p artifacts
 
       - name: Move the built binary to the artifacts directory
-        run: mv _dist/linux-arm64/helm ./artifacts/
+        run: mv _dist/linux-amd64/helm ./artifacts/
 
       - name: Upload the Helm binary artifact
         uses: actions/upload-artifact@v2
