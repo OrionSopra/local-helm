@@ -41,20 +41,7 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
-          files: _dist/*
-      
-      - name: Create a directory for the artifacts
-        run: mkdir -p artifacts
-
-      - name: Move the built binary to the artifacts directory
-        run: mv _dist/linux-amd64/helm ./artifacts/
-
-      - name: Upload the Helm binary artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: helm-binary
-          path: ./artifacts
-          retention-days: 7
+          files: _dist/helm-v3.16.0-14-linux-amd64.tar.gz
           
       - name: Set latest version
         run: |
