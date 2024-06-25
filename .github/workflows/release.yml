@@ -40,7 +40,7 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
-          files: _dist/helm-${{ github.ref_name }}-linux-amd64.tar.gz
+          files: _dist/helm-${{ github.ref_name }}-*
       
       - name: Set latest version
         run: |
